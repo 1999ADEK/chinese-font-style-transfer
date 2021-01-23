@@ -1,7 +1,7 @@
 # Chinese Font Style Transfer
 
 ## Introduction
-This project aims for transfering the style of a Chinese character with respect to an arbitray font style. The whole project is implemented based on a forked
+This project aims for transfering the style of a Chinese character with respect to an arbitrary font style. The whole project is implemented based on a forked
 version of [imaginaire](https://github.com/NVlabs/imaginaire). 
 
 ## Experiment Details
