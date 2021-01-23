@@ -53,7 +53,7 @@ class ResDiscriminator(nn.Module):
     r"""Residual discriminator architecture used in the FUNIT paper."""
 
     def __init__(self,
-                 image_channels=3,
+                 image_channels=1,
                  num_classes=119,
                  num_filters=64,
                  max_num_filters=1024,

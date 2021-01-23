@@ -232,8 +232,7 @@ class BaseDataset(data.Dataset):
         transform_list = [transforms.ToTensor()]
         if normalize:
             transform_list.append(
-                transforms.Normalize((0.5, 0.5, 0.5),
-                                     (0.5, 0.5, 0.5)))
+                transforms.Normalize(0.5, 0.5))
         return transforms.Compose(transform_list)
 
     def _add_dataset(self, root, filenames=None, metadata=None):

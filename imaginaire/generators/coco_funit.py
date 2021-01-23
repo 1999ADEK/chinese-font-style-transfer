@@ -97,7 +97,7 @@ class COCOFUNITTranslator(nn.Module):
                  num_mlp_blocks=3,
                  num_downsamples_style=4,
                  num_downsamples_content=2,
-                 num_image_channels=3,
+                 num_image_channels=1,
                  weight_norm_type='',
                  **kwargs):
         super().__init__()
