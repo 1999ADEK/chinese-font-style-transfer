@@ -20,14 +20,18 @@ as the content input.
   <img src="imgs/result_original.png" alt="result_original.png", width="200"/>
 </p>
 Therefore, recognizability loss is added to solve the problem. One way is to match the content character and the output character in the image space.  
-\# fomula
-It ensure the character's identity, but sometimes the desired font style is lost due to the strong constraint of matching the two characters in the image space.  
+<p align="center">
+  <img src="https://latex.codecogs.com/png.latex?L_%7Brecog%7D%20%3D%20%7B%5ClVert%20I_%7Bcontent%7D%20-%20I_%7Boutput%7D%20%5CrVert%7D_1" alt="equation", width="200"/>
+</p>
+It ensures the character's identity, but sometimes the desired font style is lost due to the strong constraint of matching the two characters in the image space.  
 <p align="center">
   <img src="imgs/result_image_matching.png" alt="result_image_matching.png", width="200"/>
 </p>
 Another way is to match the content character and the output character in the feature space. A pre-trained character classifier is used as a feature extractor to 
-compute the feature-matching loss of the content and the output character.  
-\# fomula  
+compute the feature-matching loss of the content and the output character.   
+<p align="center">
+  <img src="https://latex.codecogs.com/png.latex?L_%7Brecog%7D%20%3D%20%7B%5ClVert%20f%28I_%7Bcontent%7D%29%20-%20f%28I_%7Boutput%7D%29%20%5CrVert%7D_1" alt="equation", width="200"/>
+</p>
 The identity of the character is retained.  
 <p align="center">
   <img src="imgs/result_feature_matching.png" alt="result_feature_matching.png", width="200"/>
