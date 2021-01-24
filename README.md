@@ -16,16 +16,22 @@ version of [imaginaire](https://github.com/NVlabs/imaginaire).
 ## Results  
 With the original COCO-FUNIT implementation, the output character often fails to retain the identity, that is, it fails to be recognized as the same character
 as the content input.  
-\# result img  
+<p align="center">
+  <img src="imgs/result_original.png" alt="result_original.png", width="200"/>
+</p>
 Therefore, recognizability loss is added to solve the problem. One way is to match the content character and the output character in the image space.  
-\# formula  
+\# fomula
 It ensure the character's identity, but sometimes the desired font style is lost due to the strong constraint of matching the two characters in the image space.  
-\# result img  
+<p align="center">
+  <img src="imgs/result_image_matching.png" alt="result_image_matching.png", width="200"/>
+</p>
 Another way is to match the content character and the output character in the feature space. A pre-trained character classifier is used as a feature extractor to 
 compute the feature-matching loss of the content and the output character.  
 \# fomula  
 The identity of the character is retained.  
-\# result img   
+<p align="center">
+  <img src="imgs/result_feature_matching.png" alt="result_feature_matching.png", width="200"/>
+</p> 
 
 ## Train 
 First put any font types you like under the folder `dataset/font_train` and then modify the file `dataset/font_file_train.json` according to the font types. Use the following command to generate training dataset.
