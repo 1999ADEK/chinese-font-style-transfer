@@ -13,22 +13,45 @@ version of [imaginaire](https://github.com/NVlabs/imaginaire).
   of size 256x256 from the [character set](https://blog.csdn.net/u011762313/article/details/47419063) of commonly used Chinese characters. 
   The source fonts are downloaded from [字体天下](http://www.fonts.net.cn/).  
   
- ## Results  
- With the original COCO-FUNIT implementation, the output character often fails to retain the identity, that is, it fails to be recognized as the same character
- as the content input.  
- \# result img  
- Therefore, recognizability loss is added to solve the problem. One way is to match the content character and the output character in the image space.  
- \# formula  
- It ensure the character's identity, but sometimes the desired font style is lost due to the strong constraint of matching the two characters in the image space.  
- \# result img  
- Another way is to match the content character and the output character in the feature space. A pre-trained character classifier is used as a feature extractor to 
- compute the feature-matching loss of the content and the output character.  
- \# fomula  
- The identity of the character is retained.  
- \# result img   
+## Results  
+With the original COCO-FUNIT implementation, the output character often fails to retain the identity, that is, it fails to be recognized as the same character
+as the content input.  
+\# result img  
+Therefore, recognizability loss is added to solve the problem. One way is to match the content character and the output character in the image space.  
+\# formula  
+It ensure the character's identity, but sometimes the desired font style is lost due to the strong constraint of matching the two characters in the image space.  
+\# result img  
+Another way is to match the content character and the output character in the feature space. A pre-trained character classifier is used as a feature extractor to 
+compute the feature-matching loss of the content and the output character.  
+\# fomula  
+The identity of the character is retained.  
+\# result img   
+
+## Train 
+First put any font types you like under the folder `dataset/font_train` and then modify the file `dataset/font_file_train.json` according to the font types. Use the following command to generate training dataset.
+```bash
+bash scripts/gen_font_train_data.sh
+```  
+After specifying the training setting by modifying the file `configs/config.yaml`, train your model by  
+```bash
+python train.py \
+--config configs/config.yaml \
+--logdir logs
+```
  
- ## Train
- \# TODO
- 
- ## Inference
- \# TODO
+## Inference
+First put any font types you like under the folder `dataset/font_test` and then modify the file `dataset/font_file_test.json` according to the font types. Use the following command to generate testing data.
+```bash
+bash scripts/gen_font_test_data.sh
+```  
+After specifying the testing setting by modifying the file `configs/config.yaml`, test your model by  
+```bash
+python inference.py \
+--config configs/config.yaml \
+--checkpoint checkpoint.pth \
+--output_dir result
+```
+A pretrained model can be downloaded by 
+```bash
+bash scripts/download_model.sh
+```  
