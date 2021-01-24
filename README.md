@@ -30,7 +30,7 @@ It ensures the character's identity, but sometimes the desired font style is los
 Another way is to match the content character and the output character in the feature space. A pre-trained character classifier is used as a feature extractor to 
 compute the feature-matching loss of the content and the output character.   
 <p align="center">
-  <img src="https://latex.codecogs.com/png.latex?L_%7Brecog%7D%20%3D%20%7B%5ClVert%20f%28I_%7Bcontent%7D%29%20-%20f%28I_%7Boutput%7D%29%20%5CrVert%7D_1" alt="equation", width="200"/>
+  <img src="https://latex.codecogs.com/png.latex?L_%7Brecog%7D%20%3D%20%7B%5ClVert%20f%28I_%7Bcontent%7D%29%20-%20f%28I_%7Boutput%7D%29%20%5CrVert%7D_1" alt="equation", width="230"/>
 </p>
 The identity of the character is retained.  
 <p align="center">
